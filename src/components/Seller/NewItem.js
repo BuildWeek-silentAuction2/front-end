@@ -24,14 +24,26 @@ const NewItem = props => {
             <form onSubmit={newItem()}>
                 <input 
                 type="text"
-                name="title"
+                name="name"
                 value={auction.name}
                 onChange={handleChange}
                 />
                 <input 
-                type="date"
-                name="start_time"
-                value={auction.start}
+                type="text"
+                name="image_url"
+                value={auction.image}
+                onChange={handleChange}
+                />
+                <input 
+                type="text"
+                name="description"
+                value={auction.description}
+                onChange={handleChange}
+                />
+                <input 
+                type="text"
+                name="starting_price"
+                value={auction.starting_price}
                 onChange={handleChange}
                 />
             </form>
