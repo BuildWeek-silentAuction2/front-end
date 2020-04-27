@@ -4,7 +4,7 @@ export const newItem = () => {
     return dispatch => {
     dispatchEvent({type: "PUT_NEW_ITEM"})
     axiosWithAuth()
-        .get("")
+        .put("",)
         .then(res => {
             console.log(res);
             dispatchEvent({type: "PUT_ITEM_SUCCESS", payload: res.data})

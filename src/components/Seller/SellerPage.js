@@ -20,7 +20,7 @@ const SellerPage = () => {
             <h1>Welcome to the Auction</h1>
             <h3>View your current auctions below, or start a new one</h3>
             <CurrentAuctions auctions={auctionList} addAuctions={setAuctionList}/>
-            <button>Start Auction</button>
+            <button>Create New Auction</button>
         </div>
     )
 }

@@ -38,7 +38,6 @@ const CurrentAuctions = props => {
                     <p>Anonymous Bidding: {item.anonymous_bidders}</p>
                 </div>
             ))}
-            <button>Add New</button>
         </div>
     )
 }
@@ -46,10 +45,10 @@ const CurrentAuctions = props => {
 const mapStateToProps = state => {
     // console.log("State to Props: ", state);
     return {
-        // data: ,
-        // isFetching: ,
-        // error: 
+        data: state.sellerReducer.data,
+        isFetching: state.sellerReducer.isFetching,
+        error: state.sellerReducer.error
     };
 };
 
-export default connect(mapStateToProps, {fetchAuctions}(CurrentAuctions);
+export default connect(mapStateToProps, {fetchAuctions}(CurrentAuctions));

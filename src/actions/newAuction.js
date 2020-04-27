@@ -1,10 +1,10 @@
 import axiosWithAuth from "../utils/axiosWithAuth";
 
-export const newAuctions = () => {
+export const newAuction = () => {
     return dispatch => {
     dispatchEvent({type: "PUT_NEW_AUCTION"})
     axiosWithAuth()
-        .get("")
+        .put("",)
         .then(res => {
             console.log(res);
             dispatchEvent({type: "PUT_AUC_SUCCESS", payload: res.data})
