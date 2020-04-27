@@ -2,17 +2,9 @@ import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import Loader from "react-loader-spinner";
 
-// import {axiosWithAuth} from "../utils/axiosWithAuth";
+import {fetchAuctions} from "../../actions/fetchAuctions";
 
-// const auctionState = {
-//     auction_id: "",
-//     name: "",
-//     start_time: "",
-//     end_time: "",
-//     anonymous_bidders: false
-// }
-
-const CurrentAuctions = props => {
+const sellerCurrentAuctions = props => {
     useEffect(() => {
         props.fetchAuctions();
     }, [])
@@ -51,4 +43,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, {fetchAuctions}(CurrentAuctions));
+export default connect(mapStateToProps, {fetchAuctions}(sellerCurrentAuctions));

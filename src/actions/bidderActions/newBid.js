@@ -1,6 +1,6 @@
 import axiosWithAuth from "../../utils/axiosWithAuth";
 
-export const newItem = () => {
+export const newBid = () => {
     return dispatch => {
     dispatchEvent({type: "PUT_NEW_BID"})
     axiosWithAuth()
