@@ -1,18 +1,18 @@
-import axiosWithAuth from "../utils/axiosWithAuth";
+import axiosWithAuth from "../../utils/axiosWithAuth";
 
-export const newAuction = () => {
+export const newItem = () => {
     return dispatch => {
-    dispatchEvent({type: "PUT_NEW_AUCTION"})
+    dispatchEvent({type: "PUT_NEW_ITEM"})
     axiosWithAuth()
         .put("",)
         .then(res => {
             console.log(res);
-            dispatchEvent({type: "PUT_AUC_SUCCESS", payload: res.data})
+            dispatchEvent({type: "PUT_ITEM_SUCCESS", payload: res.data})
         })
         .catch(err => {
             console.log(err)
             dispatch ({
-                type: "PUT_AUC_FAILURE",
+                type: "PUT_ITEM_FAILURE",
                 payload: `Error ${err.response.status}: ${err.response.data}`
             });
         });
