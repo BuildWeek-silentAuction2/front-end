@@ -1,6 +1,8 @@
 import React from 'react';
-import Login from './components/Login/Login'
+
 import './App.css';
+
+import BidderCurrentAuctions from "./components/Bidder/BidderCurrentAuctions";
 
 function App() {
   return (
@@ -9,6 +11,7 @@ function App() {
       <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
         Silent Auction
       </header>
+      <BidderCurrentAuctions />
     </div>
   );
 }

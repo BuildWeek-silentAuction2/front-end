@@ -12,3 +12,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.spinner-box {
+  display: flex;
+  justify-content: center;
+  margin-right: 1%;
+}
