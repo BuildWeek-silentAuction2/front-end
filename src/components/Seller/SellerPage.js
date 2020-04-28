@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 import SellerCurrentAuctions from "./SellerCurrentAuctions";
 
-import Button from "@material-ui/core/Button";
+import StyledButton from "../Design Components/StyledButton";
 
 const SellerPage = () => {
     const [auctionList, setAuctionList] = useState([]);
@@ -12,7 +12,7 @@ const SellerPage = () => {
             <h1>Welcome to the Auction</h1>
             <h3>View current auctions below, or start a new one</h3>
             <SellerCurrentAuctions auctions={auctionList} addAuctions={setAuctionList}/>
-            <Button variant="contained" color="primary">Create New Auction</Button>
+            <StyledButton>Create New Auction</StyledButton>
         </div>
     )
 }

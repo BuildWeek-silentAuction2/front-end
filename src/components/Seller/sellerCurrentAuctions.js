@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 
 import {fetchAuctions} from "../../actions/fetchAuctions";
 
-import Loader from "react-loader-spinner";
+import SpinningLoader from "../Design Components/SpinningLoader"
   
 const SellerCurrentAuctions = props => {
 
@@ -16,13 +16,9 @@ const SellerCurrentAuctions = props => {
         <div className="auction-list">
             <h2>Current Running Auctions:</h2>
             {props.isFetching && (
-            <Loader
-            type="Puff"
-            color="#00BFFF"
-            height={100}
-            width={100}
-            //timeout={3000} //optional end
-            />
+            <div className="spinner-box">
+                <SpinningLoader />
+            </div>
             )}
             {props.error && <p className="error">{props.error}</p>}
             {props.data && props.data.map(item => (

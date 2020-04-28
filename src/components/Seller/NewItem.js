@@ -3,8 +3,8 @@ import {connect} from "react-redux";
 
 import newItem from "../../actions/sellerActions/newItem";
 
-import Loader from "react-loader-spinner";
-import Button from "@material-ui/core/Button";
+import SpinningLoader from "../Design Components/SpinningLoader"
+import StyledButton from "../Design Components/StyledButton";
 
 const NewItem = props => {
     useEffect(() => {
@@ -18,13 +18,9 @@ const NewItem = props => {
     const addingItem = props => {
         return (
         props.isFetching && (
-        <Loader
-        type="Puff"
-        color="#00BFFF"
-        height={100}
-        width={100}
-        //timeout={3000} //optional end
-        />
+        <div className="spinner-box">
+            <SpinningLoader />
+        </div>
         ))}
 
     return (
@@ -55,7 +51,7 @@ const NewItem = props => {
                 onChange={handleChange}
                 />
             </form>
-            <Button type="submit" onSubmit={addingItem} variant="contained" color="primary">Add Item</Button>
+            <StyledButton type="submit" onSubmit={addingItem}>Add Item</StyledButton>
         </div>
     )
 }
