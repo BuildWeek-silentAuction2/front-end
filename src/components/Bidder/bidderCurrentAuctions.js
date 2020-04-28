@@ -1,10 +1,12 @@
 import React, {useEffect} from "react";
 import {connect} from "react-redux";
-import Loader from "react-loader-spinner";
 
 import {fetchAuctions} from "../../actions/fetchAuctions";
 
-const bidderCurrentAuctions = props => {
+import Loader from "react-loader-spinner";
+import Button from "@material-ui/core/Button";
+
+const BidderCurrentAuctions = props => {
     useEffect(() => {
         props.fetchAuctions();
     }, [])
@@ -28,7 +30,7 @@ const bidderCurrentAuctions = props => {
                     <p>{item.start_time}</p>
                     <p>{item.end_time}</p>
                     <p>Anonymous Bidding: {item.anonymous_bidders}</p>
-                    <button>Bid Now</button>
+                    <Button variant="contained" color="primary">Bid Now</Button>
                 </div>
             ))}
         </div>
@@ -44,4 +46,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, {fetchAuctions}(bidderCurrentAuctions));
+export default connect(mapStateToProps, {fetchAuctions})(BidderCurrentAuctions);

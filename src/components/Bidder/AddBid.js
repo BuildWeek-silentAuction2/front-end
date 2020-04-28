@@ -1,13 +1,19 @@
 import React, {useEffect} from "react";
 import {connect} from "react-redux";
-import Loader from "react-loader-spinner";
 
 import {newBid} from "../../actions/bidderActions/newBid";
+
+import Loader from "react-loader-spinner";
+import Button from "@material-ui/core/Button";
 
 const AddBid = props => {
     useEffect(() => {
         props.newBid();
-    }, [])
+    }, [props])
+
+    const handleChange = e => {
+        e.persist();
+      };
 
     const addingBid = props => {
         return (
@@ -22,17 +28,17 @@ const AddBid = props => {
         ))}
 
     return (
-        <div className="add-auction">
+        <div className="add-bid">
             <form onSubmit={newBid()}>
                 <input 
                 type="text"
                 name="bid"
-                value={auction.amount}
+                value={props.auction.amount}
                 onChange={handleChange}
                 />
 
             </form>
-            <button type="submit" onSubmit={addingBid}>Add Auction</button>
+            <Button type="submit" onSubmit={addingBid} variant="contained" color="primary">Add Bid</Button>
         </div>
     )
 }
@@ -46,4 +52,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, {newBid}(AddBid))
+export default connect(mapStateToProps, {newBid})(AddBid)

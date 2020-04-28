@@ -1,13 +1,16 @@
 import React, {useEffect} from "react";
 import {connect} from "react-redux";
-import Loader from "react-loader-spinner";
 
 import {fetchAuctions} from "../../actions/fetchAuctions";
 
-const sellerCurrentAuctions = props => {
+import Loader from "react-loader-spinner";
+  
+const SellerCurrentAuctions = props => {
+
     useEffect(() => {
         props.fetchAuctions();
-    }, [])
+        //console.log("Fetch Auctions: ", props.fetchAuctions())
+    }, [props])
 
     return (
         <div className="auction-list">
@@ -32,7 +35,7 @@ const sellerCurrentAuctions = props => {
             ))}
         </div>
     )
-}
+};
 
 const mapStateToProps = state => {
     // console.log("State to Props: ", state);
@@ -43,4 +46,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, {fetchAuctions}(sellerCurrentAuctions));
+export default connect(mapStateToProps, {fetchAuctions})(SellerCurrentAuctions)

@@ -2,12 +2,12 @@ import axiosWithAuth from "../../utils/axiosWithAuth";
 
 export const newBid = () => {
     return dispatch => {
-    dispatchEvent({type: "PUT_NEW_BID"})
+    dispatch({type: "PUT_NEW_BID"})
     axiosWithAuth()
         .put("",)
         .then(res => {
             console.log(res);
-            dispatchEvent({type: "PUT_BID_SUCCESS", payload: res.data})
+            dispatch({type: "PUT_BID_SUCCESS", payload: res.data})
         })
         .catch(err => {
             console.log(err)
