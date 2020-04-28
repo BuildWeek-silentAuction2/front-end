@@ -3,8 +3,8 @@ import {connect} from "react-redux";
 
 import {newBid} from "../../actions/bidderActions/newBid";
 
-import Loader from "react-loader-spinner";
-import Button from "@material-ui/core/Button";
+import SpinningLoader from "../Design Components/SpinningLoader"
+import StyledButton from "../Design Components/StyledButton";
 
 const AddBid = props => {
     useEffect(() => {
@@ -18,13 +18,9 @@ const AddBid = props => {
     const addingBid = props => {
         return (
         props.isFetching && (
-        <Loader
-        type="Puff"
-        color="#00BFFF"
-        height={100}
-        width={100}
-        //timeout={3000} //optional end
-        />
+        <div className="spinner-box">
+            <SpinningLoader />
+        </div>
         ))}
 
     return (
@@ -38,7 +34,7 @@ const AddBid = props => {
                 />
 
             </form>
-            <Button type="submit" onSubmit={addingBid} variant="contained" color="primary">Add Bid</Button>
+            <StyledButton type="submit" onSubmit={addingBid} variant="contained" color="primary">Add Bid</StyledButton>
         </div>
     )
 }

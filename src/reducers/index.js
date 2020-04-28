@@ -1,8 +1,8 @@
 import {combineReducers} from "redux";
 import {sellerReducer} from "./sellerReducer";
-import {bidderReducer} from "./bidderReducer";
+import {buyerReducer} from "./buyerReducer";
 
 export default combineReducers ({
     sellerReducer,
-    bidderReducer
+    buyerReducer
 })

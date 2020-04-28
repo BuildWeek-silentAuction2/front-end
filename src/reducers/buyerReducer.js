@@ -4,7 +4,7 @@ const initialState = {
     error: ""
 }
 
-export const bidderReducer = (state = initialState, action) => {
+export const buyerReducer = (state = initialState, action) => {
     switch (action.type) {
         // Making New Bid
         case "PUT_NEW_BID":
