@@ -6,7 +6,7 @@ import {fetchAuctions} from "../../actions/fetchAuctions";
 import SpinningLoader from "../Design Components/SpinningLoader"
 import StyledButton from "../Design Components/StyledButton";
 
-const BidderCurrentAuctions = props => {
+const BuyerCurrentAuctions = props => {
     useEffect(() => {
         props.fetchAuctions();
     }, [props])
@@ -40,4 +40,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, {fetchAuctions})(BidderCurrentAuctions);
+export default connect(mapStateToProps, {fetchAuctions})(BuyerCurrentAuctions);
