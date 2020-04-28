@@ -32,11 +32,11 @@ const BuyerCurrentAuctions = props => {
 }
 
 const mapStateToProps = state => {
-    // console.log("State to Props: ", state);
+    console.log("State to Props: ", state);
     return {
-        data: state.bidderReducer.data,
-        isFetching: state.bidderReducer.isFetching,
-        error: state.bidderReducer.error
+        // data: state.bidderReducer.data,
+        // isFetching: state.bidderReducer.isFetching,
+        // error: state.bidderReducer.error
     };
 };
 
