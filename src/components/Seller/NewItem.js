@@ -1,11 +1,19 @@
 import React, {useEffect} from "react";
 import {connect} from "react-redux";
+
+import newItem from "../../actions/sellerActions/newItem";
+
 import Loader from "react-loader-spinner";
+import Button from "@material-ui/core/Button";
 
 const NewItem = props => {
     useEffect(() => {
         props.newItem();
-    }, [])
+    }, [props])
+
+    const handleChange = e => {
+        e.persist();
+      };
 
     const addingItem = props => {
         return (
@@ -20,34 +28,34 @@ const NewItem = props => {
         ))}
 
     return (
-        <div className="add-auction">
+        <div className="add-item">
             <form onSubmit={newItem()}>
                 <input 
                 type="text"
                 name="name"
-                value={auction.name}
+                value={props.auction.name}
                 onChange={handleChange}
                 />
                 <input 
                 type="text"
                 name="image_url"
-                value={auction.image}
+                value={props.auction.image}
                 onChange={handleChange}
                 />
                 <input 
                 type="text"
                 name="description"
-                value={auction.description}
+                value={props.auction.description}
                 onChange={handleChange}
                 />
                 <input 
                 type="text"
                 name="starting_price"
-                value={auction.starting_price}
+                value={props.auction.starting_price}
                 onChange={handleChange}
                 />
             </form>
-            <button type="submit" onSubmit={addingItem}>Add Auction</button>
+            <Button type="submit" onSubmit={addingItem} variant="contained" color="primary">Add Item</Button>
         </div>
     )
 }
@@ -61,4 +69,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, {newItem}(NewItem))
+export default connect(mapStateToProps, {newItem})(NewItem)

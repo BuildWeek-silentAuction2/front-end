@@ -1,13 +1,13 @@
 import axiosWithAuth from "../../utils/axiosWithAuth";
 
-export const newItem = () => {
+const newItem = () => {
     return dispatch => {
-    dispatchEvent({type: "PUT_NEW_ITEM"})
+    dispatch({type: "PUT_NEW_ITEM"})
     axiosWithAuth()
         .put("",)
         .then(res => {
             console.log(res);
-            dispatchEvent({type: "PUT_ITEM_SUCCESS", payload: res.data})
+            dispatch({type: "PUT_ITEM_SUCCESS", payload: res.data})
         })
         .catch(err => {
             console.log(err)
@@ -18,3 +18,5 @@ export const newItem = () => {
         });
     };
 };
+
+export default newItem();

@@ -1,25 +1,18 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 
-import sellerCurrentAuctions from "../Seller/sellerCurrentAuctions";
+import SellerCurrentAuctions from "./SellerCurrentAuctions";
+
+import Button from "@material-ui/core/Button";
 
 const SellerPage = () => {
     const [auctionList, setAuctionList] = useState([]);
-
-    useEffect(() => {
-        axiosWithAuth()
-          .get("")
-          .then(res => {
-              console.log("Seller Page: ", res)
-          })
-          .catch(err => console.log(err))
-      }, []);
 
     return (
         <div>
             <h1>Welcome to the Auction</h1>
             <h3>View current auctions below, or start a new one</h3>
-            <sellerCurrentAuctions auctions={auctionList} addAuctions={setAuctionList}/>
-            <button>Create New Auction</button>
+            <SellerCurrentAuctions auctions={auctionList} addAuctions={setAuctionList}/>
+            <Button variant="contained" color="primary">Create New Auction</Button>
         </div>
     )
 }
