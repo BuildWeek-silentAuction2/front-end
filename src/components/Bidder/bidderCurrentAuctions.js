@@ -3,26 +3,20 @@ import {connect} from "react-redux";
 
 import {fetchAuctions} from "../../actions/fetchAuctions";
 
-import Loader from "react-loader-spinner";
-import Button from "@material-ui/core/Button";
+import SpinningLoader from "../Design Components/SpinningLoader"
+import StyledButton from "../Design Components/StyledButton";
 
 const BidderCurrentAuctions = props => {
     useEffect(() => {
         props.fetchAuctions();
-    }, [])
+    }, [props])
 
     return (
         <div className="auction-list">
             <h2>Current Running Auctions:</h2>
-            {props.isFetching && (
-            <Loader
-            type="Puff"
-            color="#00BFFF"
-            height={100}
-            width={100}
-            //timeout={3000} //optional end
-            />
-            )}
+            <div className="spinner-box">
+                <SpinningLoader />
+            </div>
             {props.error && <p className="error">{props.error}</p>}
             {props.data && props.data.map(item => (
                 <div className="auction-card">
@@ -30,7 +24,7 @@ const BidderCurrentAuctions = props => {
                     <p>{item.start_time}</p>
                     <p>{item.end_time}</p>
                     <p>Anonymous Bidding: {item.anonymous_bidders}</p>
-                    <Button variant="contained" color="primary">Bid Now</Button>
+                    <StyledButton>Bid Now</StyledButton>
                 </div>
             ))}
         </div>

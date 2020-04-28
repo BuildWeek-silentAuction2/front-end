@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 
 import newAuction from "../../actions/sellerActions/newAuction"
 
-import Button from "@material-ui/core/Button";
+import StyledButton from "../Design Components/StyledButton";
 
 const NewAuction = props => {
     useEffect(() => {
@@ -36,7 +36,7 @@ const NewAuction = props => {
                 onChange={handleChange}
                 />
             </form>
-            <Button type="submit" variant="contained" color="primary">Add Auction</Button>
+            <StyledButton type="submit" variant="contained" color="primary">Add Auction</StyledButton>
         </div>
 
     )
