@@ -6,7 +6,7 @@ import {fetchAuctions} from "../../actions/fetchAuctions";
 import SpinningLoader from "../Design Components/SpinningLoader"
 import StyledButton from "../Design Components/StyledButton";
 
-const BidderCurrentAuctions = props => {
+const BuyerCurrentAuctions = props => {
     useEffect(() => {
         props.fetchAuctions();
     }, [props])
@@ -32,12 +32,12 @@ const BidderCurrentAuctions = props => {
 }
 
 const mapStateToProps = state => {
-    // console.log("State to Props: ", state);
+    console.log("State to Props: ", state);
     return {
-        data: state.bidderReducer.data,
-        isFetching: state.bidderReducer.isFetching,
-        error: state.bidderReducer.error
+        // data: state.bidderReducer.data,
+        // isFetching: state.bidderReducer.isFetching,
+        // error: state.bidderReducer.error
     };
 };
 
-export default connect(mapStateToProps, {fetchAuctions})(BidderCurrentAuctions);
+export default connect(mapStateToProps, {fetchAuctions})(BuyerCurrentAuctions);
