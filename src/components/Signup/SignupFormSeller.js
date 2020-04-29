@@ -30,11 +30,7 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: theme.spacing(2)
     }
   }));
-<<<<<<< HEAD
-  
 
-=======
->>>>>>> b52c9f47820aec9301d7a2774fe08c787f5bdc43
 function SignupFormSeller(props){
     const {
         values,
@@ -137,8 +133,5 @@ function SignupFormSeller(props){
         </Container>
     )
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> b52c9f47820aec9301d7a2774fe08c787f5bdc43
 export default SignupFormSeller

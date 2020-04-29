@@ -4,34 +4,22 @@ import {Link} from "react-router-dom";
 import {fetchAuctions} from "../../actions/fetchAuctions";
 import SpinningLoader from "../Design Components/SpinningLoader"
 import Button from '@material-ui/core/Button';
-<<<<<<< HEAD
-=======
-  
->>>>>>> b52c9f47820aec9301d7a2774fe08c787f5bdc43
+
 const SellerCurrentAuctions = props => {
     const [auctionId, setAuctionId] = useState({
         id: ""
     })
-<<<<<<< HEAD
-=======
 
->>>>>>> b52c9f47820aec9301d7a2774fe08c787f5bdc43
     useEffect(() => {
         props.fetchAuctions();
         //console.log("Fetch Auctions: ", props.fetchAuctions())
     }, [])
-<<<<<<< HEAD
-=======
 
->>>>>>> b52c9f47820aec9301d7a2774fe08c787f5bdc43
     const submitId = e => {
         setAuctionId(...auctionId, props.data.id)
         console.log("Auction Id: ", auctionId)
     };
-<<<<<<< HEAD
-=======
 
->>>>>>> b52c9f47820aec9301d7a2774fe08c787f5bdc43
     return (
         <div className="auction-list">
             <h2>Current Running Auctions:</h2>
