@@ -1,13 +1,14 @@
 // IMPORTANT NOTES FROM GOOGLE SEARCHES:
 // to make password field hidden, add <input type="password" name="password"> in the input field on the form page
 
-
 // useState imported because we will change state of form inputs
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SignupForm from './SignupForm';
 // yup imported for form validation
 import * as yup from 'yup';
+
+
 
 // the URL for our [GET] and [POST] requests
 const url = 'https://reqres.in/api/users'
@@ -49,6 +50,8 @@ const formSchema = yup.object().shape({
     .matches( /(Seller|Buyer)/, 'Choose either Seller or Buyer')
     .required('Selecting an account type is required')
 })
+
+// Styling 
 
 function Signup() {
   const [users, setUsers] = useState([])
@@ -92,7 +95,7 @@ function Signup() {
           username: formValues.username,
           email: formValues.email,
           password: formValues.password,
-          account: formValues.account === 'seller' ? false : true,
+          account: formValues.account === 'buyer' ? false : true,
       }
       // Step 6 - Post new user to the API
       postNewUser(newUser)
@@ -117,9 +120,10 @@ function Signup() {
       .catch(err => {
         setFormErrors({
           ...formErrors,
-          [name]: value,
+          [name]: err.errors[0],
         })
       })
+      
     setFormValues({
       ...formValues,
       [name]: value,
