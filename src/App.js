@@ -9,6 +9,8 @@ import NewListing from "./components/Seller/NewListing";
 import NewAuction from "./components/Seller/NewAuction";
 import BuyerPage from "./components/Buyer/BuyerPage";
 import AddBid from "./components/Buyer/AddBid";
+import BuyerLogin from "./components/Login/BuyerLogin";
+import SellerLogin from "./components/Login/SellerLogin"
 
 import "./App.css";
 
@@ -19,6 +21,8 @@ const App = () => {
       <Router>
         <Route exact path="/signup-seller" component={SignupSeller} />
         <Route exact path="/" component={SignupBuyer} />
+        <Route exact path="/login-buyer" component={BuyerLogin} />
+        <Route exact path="/login-seller" component={SellerLogin} />
         <Route exact path="/seller-page" component={SellerPage}/>
         <Route exact path="/view-auction/:id" component={AuctionPage}/>
         <Route exact path="/view-auction/:id/new-listing" component={NewListing} />
