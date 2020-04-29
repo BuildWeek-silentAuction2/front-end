@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 // STYLING IMPORTS
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -33,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   }));
   
 
-function SignupForm(props){
+function SignupFormSeller(props){
     const {
         values,
         onInputChange,
@@ -52,7 +53,7 @@ function SignupForm(props){
                     <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Create an Account
+                    Create a Seller Account
                 </Typography>
                 <form className={classes.form}>
                     {/* (Step 10) SHOW ERRORS */}
@@ -121,20 +122,21 @@ function SignupForm(props){
                         </Grid> */}
                     </Grid>
                     {/* /////// Create Account BUTTON //////// */}
-                    <Button 
-                        to='/'
-                        onClick={onSubmit} 
-                        disabled={disabled} 
-                        className={classes.submit}
-                        fullWidth
-                        variant='contained'
-                        color='secondary'
-                        >  Create Account
-                    </Button>
+                    <Link to='/seller-page'>
+                        <Button 
+                            onClick={onSubmit} 
+                            disabled={disabled} 
+                            className={classes.submit}
+                            fullWidth
+                            variant='contained'
+                            color='secondary'
+                            >  Create Account
+                        </ Button>
+                    </Link>
                 </form>
             </div>
-        </Container>    
+        </Container>
     )
 }
 
-export default SignupForm
+export default SignupFormSeller

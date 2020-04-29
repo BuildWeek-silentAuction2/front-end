@@ -1,6 +1,7 @@
 import React from 'react'
 // STYLING IMPORTS
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 // import InputLabel from '@material-ui/core/InputLabel';
@@ -33,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   }));
   
 
-function SignupForm(props){
+function SignupFormBuyer(props){
     const {
         values,
         onInputChange,
@@ -52,7 +53,7 @@ function SignupForm(props){
                     <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Create an Account
+                    Create a Buyer Account
                 </Typography>
                 <form className={classes.form}>
                     {/* (Step 10) SHOW ERRORS */}
@@ -121,20 +122,21 @@ function SignupForm(props){
                         </Grid> */}
                     </Grid>
                     {/* /////// Create Account BUTTON //////// */}
-                    <Button 
-                        to='/'
-                        onClick={onSubmit} 
-                        disabled={disabled} 
-                        className={classes.submit}
-                        fullWidth
-                        variant='contained'
-                        color='secondary'
-                        >  Create Account
-                    </Button>
+                    <Link to='/buyer-page'>
+                        <Button 
+                            onClick={onSubmit} 
+                            disabled={disabled} 
+                            className={classes.submit}
+                            fullWidth
+                            variant='contained'
+                            color='secondary'
+                            >  Create Account
+                        </Button>
+                    </Link>
                 </form>
             </div>
         </Container>    
     )
 }
 
-export default SignupForm
+export default SignupFormBuyer
