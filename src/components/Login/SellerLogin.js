@@ -14,7 +14,7 @@ const SellerLogin = props => {
       axios
         .post("https://api-silent-auction.herokuapp.com/api/seller/login", login)
         .then(res => {
-          localStorage.setItem("token", res.data.payload);
+          localStorage.setItem("token", res.data.token);
           props.history.push("/seller-page");
         })
         .catch(err => console.log(err))
@@ -33,15 +33,3 @@ const SellerLogin = props => {
 }
 
 export default SellerLogin
-
-    // const onSubmit = evt => {
-    //     // Step 5 - implement a submit handler
-    //     evt.preventDefault()
-
-    //     const newUser = {
-    //         name: formValues.username,
-    //         password: formValues.password,
-    //     }
-    //     setUsers([ ...users, newUser])
-    //     setFormValues(initialFormValues)
-    // }
