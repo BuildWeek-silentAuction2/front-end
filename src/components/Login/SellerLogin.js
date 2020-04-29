@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import SellerLoginForm from './SellerLoginForm';
+import React, { useState } from 'react'
+import axios from "axios";
+import SellerLoginForm from './SellerLoginForm'
 
 const SellerLogin = props => {
     const [login, setLogin] = useState({username: "", password: ""});
@@ -12,7 +12,7 @@ const SellerLogin = props => {
     const handleSubmit = e => {
       e.preventDefault();
       axios
-        .post("http://localhost:5000/api/login", login)
+        .post("https://api-silent-auction.herokuapp.com/api/seller/login", login)
         .then(res => {
           localStorage.setItem("token", res.data.payload);
           props.history.push("/bubblepage");

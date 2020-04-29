@@ -130,7 +130,7 @@ function SignupFormSeller(props){
                     </Link>
                     <Grid container justify="flex-end">
                         <Grid item>
-                            <Link href="#" variant="body2">
+                            <Link to="login-seller" variant="body2">
                                 Already have an account? Sign in
                             </Link>
                         </Grid>
