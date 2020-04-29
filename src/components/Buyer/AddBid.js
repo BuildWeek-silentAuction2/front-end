@@ -6,7 +6,7 @@ import {fetchAuctions} from "../../actions/fetchAuctions";
 import {newBid} from "../../actions/buyerActions/newBid";
 
 import SpinningLoader from "../Design Components/SpinningLoader"
-import StyledButton from "../Design Components/StyledButton";
+import Button from '@material-ui/core/Button';
 
 const AddBid = props => {
     const [newBidderBid, setNewBidderBid] = useState();
@@ -41,11 +41,11 @@ const AddBid = props => {
                 onChange={handleChange}
                 />
                 </form>
-            <StyledButton type="submit" onSubmit={addingBid}>Add Bid</StyledButton>
+            <Button type="submit" onSubmit={addingBid} variant="contained" color="secondary">Add Bid</Button>
             <br/>
             <br/>
             <Link to="/">
-                <StyledButton>Home</StyledButton>
+                <Button variant="contained" color="secondary">Home</Button>
             </Link>
         </div>
     )

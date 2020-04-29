@@ -4,7 +4,7 @@
 // useState imported because we will change state of form inputs
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import SignupForm from './SignupFormSeller';
+import SignupFormBuyer from './SignupFormBuyer';
 // yup imported for form validation
 import * as yup from 'yup';
 
@@ -132,7 +132,7 @@ function SignupBuyer() {
   }
 
   return (
-    <SignupForm
+    <SignupFormBuyer
       values={formValues}
       onInputChange={onInputChange}
       onSubmit={onSubmit}
