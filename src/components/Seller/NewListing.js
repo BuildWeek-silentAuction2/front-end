@@ -4,7 +4,7 @@ import {useHistory, Link} from "react-router-dom";
 
 import {newListing} from "../../actions/sellerActions/newListing";
 
-import Button from '@material-ui/core/Button'
+import StyledButton from "../Design Components/StyledButton";
 
 const NewListing = props => {
     const [newItem, setNewItem] = useState({
@@ -64,11 +64,11 @@ const NewListing = props => {
                 onChange={handleChange}
                 />
             </form>
-            <Button type="submit" onSubmit={submitForm} variant="contained" color="secondary">Add Item</Button>
+            <StyledButton type="submit" onSubmit={submitForm}>Add Item</StyledButton>
             <br/>
             <br/>
             <Link to="/">
-                <Button variant="contained" color="secondary">Home</Button>
+                <StyledButton variant="contained" color="secondary">Home</StyledButton>
             </Link>
         </div>
     )

@@ -6,16 +6,16 @@ import {fetchAuctions} from "../../actions/fetchAuctions";
 import {newBid} from "../../actions/buyerActions/newBid";
 
 import SpinningLoader from "../Design Components/SpinningLoader"
-import Button from '@material-ui/core/Button'
+import StyledButton from "../Design Components/StyledButton";
 
 const AddBid = props => {
     const [newBidderBid, setNewBidderBid] = useState();
     const { push } = useHistory()
     console.log("New Bid props: ", props)
 
-    useEffect(() => {
-        props.fetchAuctions();
-    }, [])
+    // useEffect(() => {
+    //     props.fetchAuctions();
+    // }, [])
 
     const handleChange = e => {
         setNewBidderBid({...newBidderBid, [e.target.amount]: e.target.value})
@@ -41,11 +41,11 @@ const AddBid = props => {
                 onChange={handleChange}
                 />
                 </form>
-            <Button type="submit" onSubmit={addingBid} variant="contained" color="secondary">Add Bid</Button>
+            <StyledButton type="submit" onSubmit={addingBid}>Add Bid</StyledButton>
             <br/>
             <br/>
             <Link to="/">
-                <Button variant="contained" color="secondary">Home</Button>
+                <StyledButton>Home</StyledButton>
             </Link>
         </div>
     )

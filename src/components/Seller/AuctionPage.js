@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 import {getAuction} from "../../actions/sellerActions/getAuction";
 
-import Button from '@material-ui/core/Button'
+import StyledButton from "../Design Components/StyledButton";
 import SpinningLoader from "../Design Components/SpinningLoader";
 
 const AuctionPage = props => {
@@ -25,14 +25,14 @@ const AuctionPage = props => {
                     <h3>Auction {item.id}</h3>
                     <h4>End Time: {item.end_time}</h4>
                     <Link to="/new-listing">
-                        <Button variant="contained" color="secondary">Add Listing</Button>
+                        <StyledButton>Add Listing</StyledButton>
                     </Link>
                     <br/>
                     <br/>
                 </div>
             ))}
             <Link to="/">
-                <Button variant="contained" color="secondary">Home</Button>
+                <StyledButton>Home</StyledButton>
             </Link>
         </div>
     )
