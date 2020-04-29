@@ -12,8 +12,6 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Avatar } from '@material-ui/core';
-
-
 const useStyles = makeStyles((theme) => ({
     paper: {
       marginTop: theme.spacing(8),
@@ -32,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: theme.spacing(2)
     }
   }));
-  
 
 function SignupFormSeller(props){
     const {
@@ -42,9 +39,7 @@ function SignupFormSeller(props){
         disabled,
         errors,
     } = props;
-
     const classes = useStyles();
-
     return (
         <Container component='main' maxWidth='xs'>
             <CssBaseline />

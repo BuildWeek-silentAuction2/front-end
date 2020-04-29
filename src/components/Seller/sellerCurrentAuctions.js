@@ -4,18 +4,22 @@ import {Link} from "react-router-dom";
 import {fetchAuctions} from "../../actions/fetchAuctions";
 import SpinningLoader from "../Design Components/SpinningLoader"
 import Button from '@material-ui/core/Button';
+
 const SellerCurrentAuctions = props => {
     const [auctionId, setAuctionId] = useState({
         id: ""
     })
+
     useEffect(() => {
         props.fetchAuctions();
         //console.log("Fetch Auctions: ", props.fetchAuctions())
     }, [])
+
     const submitId = e => {
         setAuctionId(...auctionId, props.data.id)
         console.log("Auction Id: ", auctionId)
     };
+
     return (
         <div className="auction-list">
             <h2>Current Running Auctions:</h2>
@@ -40,6 +44,7 @@ const SellerCurrentAuctions = props => {
 const mapStateToProps = state => {
     // console.log("Seller Auctions State to Props: ", state);
     return {
+
         data: state.sellerReducer.data.data,
         isFetching: state.sellerReducer.isFetching,
         error: state.sellerReducer.error
