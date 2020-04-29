@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import BuyerLoginForm from './BuyerLoginForm'
+import React, { useState } from 'react';
+import axios from 'axios';
+import BuyerLoginForm from './BuyerLoginForm';
 
 const BuyerLogin = props => {
     const [login, setLogin] = useState({username: "", password: ""});
@@ -23,7 +24,7 @@ const BuyerLogin = props => {
         <div className="login form">
             <BuyerLoginForm
                 // Step 2 - Form Wants Info
-                values={formValues}
+                values={handleChange}
                 onInputChange={handleChange}
                 onSubmit={handleSubmit}
             />
