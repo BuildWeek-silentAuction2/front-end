@@ -11,7 +11,7 @@ import * as yup from 'yup';
 
 
 // the URL for our [GET] and [POST] requests
-const url = 'https://reqres.in/api/users'
+const url = 'https://api-silent-auction.herokuapp.com/api/seller/register'
 
 // the shape of the state that drives the form
 const initialFormValues = {
@@ -72,6 +72,7 @@ function Signup() {
       axios.post(url, user)
         .then(res => {
             setUsers([...users, res.data])
+            console.log(res)
         })
         .catch(err => {
             console.log(err)

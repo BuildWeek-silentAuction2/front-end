@@ -122,6 +122,7 @@ function SignupForm(props){
                     </Grid>
                     {/* /////// Create Account BUTTON //////// */}
                     <Button 
+                        to='/'
                         onClick={onSubmit} 
                         disabled={disabled} 
                         className={classes.submit}
