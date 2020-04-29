@@ -1,24 +1,23 @@
 import React, {useState, useEffect} from "react";
 import {connect} from "react-redux";
-import {useHistory, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 import {newListing} from "../../actions/sellerActions/newListing";
 
 import Button from '@material-ui/core/Button';
 
 const NewListing = props => {
-    const { push } = useHistory()
     const [newItem, setNewItem] = useState({
         name: "",
         image_url: "",
         description: "",
         starting_price: ""
     });
-    console.log("New Listing props: ", props)
+    // console.log("New Listing props: ", props)
 
     useEffect(() => {
         props.newListing();
-        console.log("Submitting New Listing: ", props.newListing)
+        // console.log("Submitting New Listing: ", props.newListing)
     }, [])
 
     const handleChange = e => {
@@ -27,9 +26,8 @@ const NewListing = props => {
 
       const submitForm = e => {
         setNewItem({...newItem, [e.target.name]: e.target.name, [e.target.image_url]: e.target.image_url, [e.target.description]: e.target.description, [e.target.starting_price]: e.target.starting_price})
-        props.newListing && props.newListing(newItem)
+        props.newListing(newItem)
         console.log("New Item: ", newItem)
-        push(`/`);
       };
 
     return (
@@ -67,7 +65,7 @@ const NewListing = props => {
             <Button variant="contained" color="secondary" type="submit" onSubmit={submitForm}>Add Item</Button>
             <br/>
             <br/>
-            <Link to="/">
+            <Link to="/seller-page">
                 <Button variant="contained" color="secondary">Home</Button>
             </Link>
         </div>

@@ -11,7 +11,7 @@ import Button from '@material-ui/core/Button';
 const AddBid = props => {
     const [newBidderBid, setNewBidderBid] = useState();
     const { push } = useHistory()
-    console.log("New Bid props: ", props)
+    // console.log("New Bid props: ", props)
 
     // useEffect(() => {
     //     props.fetchAuctions();
@@ -52,7 +52,7 @@ const AddBid = props => {
 }
 
 const mapStateToProps = state => {
-    console.log("Adding Bid State to Props: ", state);
+    // console.log("Adding Bid State to Props: ", state);
     return {
         data: state.buyerReducer.data.data,
         isFetching: state.buyerReducer.isFetching,

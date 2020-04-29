@@ -6,9 +6,7 @@ import SpinningLoader from "../Design Components/SpinningLoader"
 import Button from '@material-ui/core/Button';
 
 const SellerCurrentAuctions = props => {
-    const [auctionId, setAuctionId] = useState({
-        id: ""
-    })
+    const [auctionId, setAuctionId] = useState([])
 
     useEffect(() => {
         props.fetchAuctions();
@@ -17,7 +15,7 @@ const SellerCurrentAuctions = props => {
 
     const submitId = e => {
         setAuctionId(...auctionId, props.data.id)
-        console.log("Auction Id: ", auctionId)
+        // console.log("Auction Id: ", auctionId)
     };
 
     return (
@@ -34,7 +32,7 @@ const SellerCurrentAuctions = props => {
                     <h3>{item.name}</h3>
                     <h4>End Time: {item.end_time}</h4>
                     <Link to={`/view-auction/${item.id}`}>
-                        <Button variant="contiained" color="secondary" onClick={submitId}>Details</Button>
+                        <Button onClick={submitId} variant="contained" color="secondary" >Details</Button>
                     </Link>
                 </div>
             ))}
@@ -44,7 +42,6 @@ const SellerCurrentAuctions = props => {
 const mapStateToProps = state => {
     // console.log("Seller Auctions State to Props: ", state);
     return {
-
         data: state.sellerReducer.data.data,
         isFetching: state.sellerReducer.isFetching,
         error: state.sellerReducer.error

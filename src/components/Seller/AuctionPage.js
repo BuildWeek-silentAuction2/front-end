@@ -8,12 +8,11 @@ import Button from '@material-ui/core/Button';
 import SpinningLoader from "../Design Components/SpinningLoader";
 
 const AuctionPage = props => {
-
     const {id} = useParams()
 
     useEffect(() => {
         props.getAuction(id);
-        //console.log("Fetch Auctions: ", props.fetchAuctions())
+        // console.log("Get Auction: ", props.getAuction(id))
     }, [])
     
 
@@ -26,6 +25,7 @@ const AuctionPage = props => {
             </div>
             )}
             {props.error && <p className="error">{props.error}</p>}
+            {/* {console.log("Data passing into the map function: ", props.data)} */}
             {props.data && props.data.map(item => (
                 <div className="auction-card" key={item.id}>
                     <h3>{item.name}</h3>
@@ -35,18 +35,23 @@ const AuctionPage = props => {
                     </Link>
                     <br/>
                     <br/>
+                    <Link to="/delete-auction">
+                        <Button variant="contained" color="secondary">Delete Auction</Button>
+                    </Link>
+                    <br/>
+                    <br/>
                 </div>
             ))}
-            <Link to="/">
+            <Link to="/seller-page">
                 <Button variant="contained" color="secondary">Home</Button>
             </Link>
         </div>
     )
 }
 const mapStateToProps = state => {
-    // console.log("Seller Auctions State to Props: ", state);
+    console.log("Seller Auctions State to Props: ", state);
     return {
-        data: state.sellerReducer.data.data,
+        data: state.sellerReducer.data,
         isFetching: state.sellerReducer.isFetching,
         error: state.sellerReducer.error
     };
