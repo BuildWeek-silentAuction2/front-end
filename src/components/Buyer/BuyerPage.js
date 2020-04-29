@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import BuyerCurrentAuctions from "../Bidder/BuyerCurrentAuctions";
+import BuyerCurrentAuctions from "../Buyer/BuyerCurrentAuctions";
 
 const BuyerPage = () => {
     const [auctionList, setAuctionList] = useState([]);

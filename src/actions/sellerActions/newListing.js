@@ -1,6 +1,6 @@
 import axiosWithAuth from "../../utils/axiosWithAuth";
 
- export const newListing = () => {
+export const newListing = () => {
     return dispatch => {
     dispatch({type: "PUT_NEW_ITEM"})
     axiosWithAuth()
