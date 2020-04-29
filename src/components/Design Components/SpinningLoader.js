@@ -6,7 +6,6 @@ import Theme from "./Theme";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    
     display: 'flex',
     '& > * + *': {
       marginLeft: theme.spacing(2),

@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 import SellerCurrentAuctions from "./SellerCurrentAuctions";
 
-import Button from '@material-ui/core/Button'
+import StyledButton from "../Design Components/StyledButton";
 
 const SellerPage = () => {
     return (
@@ -17,7 +17,7 @@ const SellerPage = () => {
         </div>
         <div>
             <Link to="/new-auction">
-                <Button variant="contained" color="secondary">Create New Auction</Button>
+                <StyledButton>Create New Auction</StyledButton>
             </Link>
         </div>
         </div>

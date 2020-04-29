@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 import {fetchAuctions} from "../../actions/fetchAuctions";
 
 import SpinningLoader from "../Design Components/SpinningLoader"
-import Button from '@material-ui/core/Button'
+import StyledButton from "../Design Components/StyledButton";
 
 const BuyerCurrentAuctions = props => {
 
@@ -28,7 +28,7 @@ const BuyerCurrentAuctions = props => {
                     <h3>Auction {item.id}</h3>
                     <h4>End Time: {item.end_time}</h4>
                     <Link to="/view-auction/:id">
-                        <Button variant="contained" color="secondary">Details</Button>
+                        <StyledButton>Details</StyledButton>
                     </Link>
                 </div>
             ))}
