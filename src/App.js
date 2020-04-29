@@ -21,10 +21,10 @@ const App = () => {
         <Route exact path="/" component={SignupBuyer} />
         <Route exact path="/seller-page" component={SellerPage}/>
         <Route exact path="/view-auction/:id" component={AuctionPage}/>
-        <Route exact path="/new-listing" component={NewListing} />
+        <Route exact path="/view-auction/:id/new-listing" component={NewListing} />
         <Route exact path="/new-auction" component={NewAuction}/>
         <Route exact path="/buyer-page" component={BuyerPage}/>
-        <Route exact path="/view-auction/:id" component={AddBid} />
+        <Route exact path="/add-bit/" component={AddBid} />
       </Router>
     </div>
   );

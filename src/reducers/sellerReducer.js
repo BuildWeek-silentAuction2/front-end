@@ -34,6 +34,7 @@ export const sellerReducer = (state = initialState, action) => {
                 isFetching: true
             };
         case "FETCH_AUCTION_ID_SUCCESS":
+            console.log("Action Payload: ",action.payload)
             return {
                 ...state,
                 isFetching: false,
