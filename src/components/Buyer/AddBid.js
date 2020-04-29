@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import {newBid} from "../../actions/bidderActions/newBid";
 
 import SpinningLoader from "../Design Components/SpinningLoader"
-import StyledButton from "../Design Components/StyledButton";
+import Button from '@material-ui/core/Button'
 
 const AddBid = props => {
     useEffect(() => {
@@ -34,7 +34,7 @@ const AddBid = props => {
                 />
 
             </form>
-            <StyledButton type="submit" onSubmit={addingBid} variant="contained" color="primary">Add Bid</StyledButton>
+            <Button type="submit" onSubmit={addingBid} variant="contained" color="primary">Add Bid</Button>
         </div>
     )
 }

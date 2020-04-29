@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import {fetchAuctions} from "../../actions/fetchAuctions";
 
 import SpinningLoader from "../Design Components/SpinningLoader"
-import StyledButton from "../Design Components/StyledButton";
+import Button from '@material-ui/core/Button'
 
 const BuyerCurrentAuctions = props => {
     useEffect(() => {
@@ -24,7 +24,7 @@ const BuyerCurrentAuctions = props => {
                     <p>{item.start_time}</p>
                     <p>{item.end_time}</p>
                     <p>Anonymous Bidding: {item.anonymous_bidders}</p>
-                    <StyledButton>Bid Now</StyledButton>
+                    <Button>Bid Now</Button>
                 </div>
             ))}
         </div>

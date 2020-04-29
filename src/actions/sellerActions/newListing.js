@@ -1,22 +1,20 @@
 import axiosWithAuth from "../../utils/axiosWithAuth";
 
-const newItem = () => {
+ export const newListing = () => {
     return dispatch => {
     dispatch({type: "PUT_NEW_ITEM"})
     axiosWithAuth()
-        .put("",)
+        .post("/api/listing")
         .then(res => {
-            console.log(res);
+            console.log("Post Listing Success: ", res);
             dispatch({type: "PUT_ITEM_SUCCESS", payload: res.data})
         })
         .catch(err => {
             console.log(err)
             dispatch ({
                 type: "PUT_ITEM_FAILURE",
-                payload: `Error ${err.response.status}: ${err.response.data}`
+                payload: `Post Listing Failed: ${err.response.status}: ${err.response.data}`
             });
         });
     };
 };
-
-export default newItem();

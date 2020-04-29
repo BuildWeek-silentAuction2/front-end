@@ -1,53 +1,55 @@
-import React, {useEffect} from "react";
+import React, {useState} from "react";
 import {connect} from "react-redux";
+import {useHistory} from "react-router-dom";
 
-import newAuction from "../../actions/sellerActions/newAuction"
+import {addNewAuction} from "../../actions/sellerActions/addNewAuction"
 
-import StyledButton from "../Design Components/StyledButton";
+import Button from '@material-ui/core/Button'
 
 const NewAuction = props => {
-    useEffect(() => {
-        props.newAuction();
-    }, [])
+    const [newAuction, setNewAuction] = useState();
+    const { push } = useHistory()
+    console.log("New Auction props: ", props)
 
       const handleChange = e => {
-        e.persist();
+        setNewAuction({...newAuction, [e.target.end_time]: e.target.value})
+      };
+
+      const submitForm = e => {
+        props.addNewAuction(newAuction)
+        push(`/`);
       };
 
     return (
         <div className="add-auction">
-            <form onSubmit={newAuction()}>
+            <h3>Create New Auction</h3>
+            <form onSubmit={submitForm}>
+                <h4>Set desired end time</h4>
                 <input 
-                type="text"
-                name="title"
-                value={props.auction.name}
+                type="date"
+                name="end_date"
+                value={props.auction.endDate}
                 onChange={handleChange}
                 />
                 <input 
-                type="date"
-                name="start_time"
-                value={props.auction.start_time}
-                onChange={handleChange}
-                />
-                <input 
-                type="date"
+                type="time"
                 name="end_time"
-                value={props.auction.end_time}
+                value={props.auction.endTime}
                 onChange={handleChange}
                 />
             </form>
-            <StyledButton type="submit" variant="contained" color="primary">Add Auction</StyledButton>
+            <Button type="submit" onClick={submitForm} variant="contained" color="secondary">Add Auction</Button>
         </div>
 
     )
 }
 
 const mapStateToProps = state => {
-    // console.log("State to Props: ", state);
+    console.log("New Auction State to Props: ", state);
     return {
         auction: state.sellerReducer.data,
         error: state.sellerReducer.error
     };
 };
 
-export default connect(mapStateToProps, {newAuction})(NewAuction)
+export default connect(mapStateToProps, {addNewAuction})(NewAuction)
