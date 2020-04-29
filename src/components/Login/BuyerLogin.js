@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from "axios";
 import BuyerLoginForm from './BuyerLoginForm'
 
 const BuyerLogin = props => {
@@ -11,10 +12,10 @@ const BuyerLogin = props => {
     const handleSubmit = e => {
       e.preventDefault();
       axios
-        .post("http://localhost:5000/api/login", login)
+        .post("https://api-silent-auction.herokuapp.com/api/buyer/login", login)
         .then(res => {
           localStorage.setItem("token", res.data.payload);
-          props.history.push("/bubblepage");
+          props.history.push("/buyer-page");
         })
         .catch(err => console.log(err))
     }
@@ -23,7 +24,7 @@ const BuyerLogin = props => {
         <div className="login form">
             <BuyerLoginForm
                 // Step 2 - Form Wants Info
-                values={formValues}
+                values={handleChange}
                 onInputChange={handleChange}
                 onSubmit={handleSubmit}
             />
