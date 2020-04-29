@@ -8,6 +8,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -80,6 +82,13 @@ function BuyerLoginForm(props) {
                     > Login
                     </Button>
                 </form>
+                <Grid container justify="flex-end">
+                    <Grid item>
+                        <Link to="/" variant="body2">
+                            Don't have an account? Sign up
+                        </Link>
+                    </Grid>
+                </Grid>
             </div>
         </Container>
     )
