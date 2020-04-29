@@ -1,15 +1,21 @@
-import React, {useState} from "react";
+import React, {useEffect} from "react";
 import {connect} from "react-redux";
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 import {getAuction} from "../../actions/sellerActions/getAuction";
 
-import StyledButton from "../Design Components/StyledButton";
+import Button from '@material-ui/core/Button';
 import SpinningLoader from "../Design Components/SpinningLoader";
 
 const AuctionPage = props => {
-    // const [auctionId, setAuctionId] = useState(props)
-    console.log("Auction Id: ", props.data)
+
+    const {id} = useParams()
+
+    useEffect(() => {
+        props.getAuction(id);
+        //console.log("Fetch Auctions: ", props.fetchAuctions())
+    }, [])
+    
 
     return(
         <div className="auction-list">
@@ -22,17 +28,17 @@ const AuctionPage = props => {
             {props.error && <p className="error">{props.error}</p>}
             {props.data && props.data.map(item => (
                 <div className="auction-card" key={item.id}>
-                    <h3>Auction {item.id}</h3>
+                    <h3>{item.name}</h3>
                     <h4>End Time: {item.end_time}</h4>
                     <Link to="/new-listing">
-                        <StyledButton>Add Listing</StyledButton>
+                        <Button variant="contained" color="secondary">Add Listing</Button>
                     </Link>
                     <br/>
                     <br/>
                 </div>
             ))}
             <Link to="/">
-                <StyledButton>Home</StyledButton>
+                <Button variant="contained" color="secondary">Home</Button>
             </Link>
         </div>
     )

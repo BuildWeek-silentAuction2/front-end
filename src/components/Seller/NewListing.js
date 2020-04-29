@@ -4,16 +4,16 @@ import {useHistory, Link} from "react-router-dom";
 
 import {newListing} from "../../actions/sellerActions/newListing";
 
-import StyledButton from "../Design Components/StyledButton";
+import Button from '@material-ui/core/Button';
 
 const NewListing = props => {
+    const { push } = useHistory()
     const [newItem, setNewItem] = useState({
         name: "",
         image_url: "",
         description: "",
         starting_price: ""
     });
-    const { push } = useHistory()
     console.log("New Listing props: ", props)
 
     useEffect(() => {
@@ -64,11 +64,11 @@ const NewListing = props => {
                 onChange={handleChange}
                 />
             </form>
-            <StyledButton type="submit" onSubmit={submitForm}>Add Item</StyledButton>
+            <Button variant="contained" color="secondary" type="submit" onSubmit={submitForm}>Add Item</Button>
             <br/>
             <br/>
             <Link to="/">
-                <StyledButton variant="contained" color="secondary">Home</StyledButton>
+                <Button variant="contained" color="secondary">Home</Button>
             </Link>
         </div>
     )
