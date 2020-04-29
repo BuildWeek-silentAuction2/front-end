@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {connect} from "react-redux";
-import {useHistory} from "react-router-dom";
+import {useHistory, Link} from "react-router-dom";
 
 import {addNewAuction} from "../../actions/sellerActions/addNewAuction"
 
@@ -39,6 +39,11 @@ const NewAuction = props => {
                 />
             </form>
             <Button type="submit" onClick={submitForm} variant="contained" color="secondary">Add Auction</Button>
+            <br/>
+            <br/>
+            <Link to="/">
+                <Button variant="contained" color="secondary">Home</Button>
+            </Link>
         </div>
 
     )

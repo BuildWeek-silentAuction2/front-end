@@ -26,9 +26,9 @@ const SellerCurrentAuctions = props => {
             {props.data && props.data.map(item => (
                 <div className="auction-card" key={item.id}>
                     <h3>Auction {item.id}</h3>
-                    <h4>End Time:{item.end_time}</h4>
+                    <h4>End Time: {item.end_time}</h4>
                     <Link to="/view-auction/:id">
-                        <Button variant="contained" color="secondary">View</Button>
+                        <Button variant="contained" color="secondary">Details</Button>
                     </Link>
                 </div>
             ))}

@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button'
 import SpinningLoader from "../Design Components/SpinningLoader";
 
 const AuctionPage = props => {
-    const [auctionId, setAuctionId] = useState(props)
+    // const [auctionId, setAuctionId] = useState(props)
     console.log("Auction Id: ", props.data)
 
     return(
