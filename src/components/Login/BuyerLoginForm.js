@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   }));
   
 
-function LoginForm(props) {
+function BuyerLoginForm(props) {
     const {
         values,
         onInputChange,
@@ -43,7 +43,7 @@ function LoginForm(props) {
                     <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Log in
+                    Log into Your Buyer Account
                 </Typography>
                 <form className={classes.form}>
                     {/* //// TEXT INPUTS ////// */}
@@ -85,4 +85,4 @@ function LoginForm(props) {
     )
 } 
 
-export default LoginForm
+export default BuyerLoginForm

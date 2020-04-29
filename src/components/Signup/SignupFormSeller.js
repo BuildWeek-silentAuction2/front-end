@@ -117,7 +117,7 @@ function SignupFormSeller(props){
                         </Grid> */}
                     </Grid>
                     {/* /////// Create Account BUTTON //////// */}
-                    <Link to='/seller-page'>
+                    <Link to='/seller-page' style={{ textDecoration: 'none' }}>
                         <Button 
                             onClick={onSubmit} 
                             disabled={disabled} 
@@ -128,7 +128,23 @@ function SignupFormSeller(props){
                             >  Create Account
                         </ Button>
                     </Link>
+                    <Grid container justify="flex-end">
+                        <Grid item>
+                            <Link href="#" variant="body2">
+                                Already have an account? Sign in
+                            </Link>
+                        </Grid>
+                    </Grid>
                 </form>
+                <Link to='/' style={{ textDecoration: 'none' }}>
+                    <Button  
+                        className={classes.submit}
+                        fullWidth
+                        variant='contained'
+                        color='primary'
+                        >  Are You Bidding?
+                    </Button>
+                </Link>
             </div>
         </Container>
     )

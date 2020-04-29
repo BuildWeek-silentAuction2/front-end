@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import LoginForm from './LoginForm'
+import SellerLoginForm from './SellerLoginForm'
 
-const Login = props => {
+const SellerLogin = props => {
     const [login, setLogin] = useState({username: "", password: ""});
   
     const handleChange = e => {
@@ -21,7 +21,7 @@ const Login = props => {
 
     return (
         <div className="login form">
-            <LoginForm
+            <SellerLoginForm
                 // Step 2 - Form Wants Info
                 values={formValues}
                 onInputChange={handleChange}
@@ -31,7 +31,7 @@ const Login = props => {
     )
 }
 
-export default Login
+export default SellerLogin
 
     // const onSubmit = evt => {
     //     // Step 5 - implement a submit handler
