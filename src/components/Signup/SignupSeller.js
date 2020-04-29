@@ -4,7 +4,7 @@
 // useState imported because we will change state of form inputs
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import SignupForm from './SignupForm';
+import SignupForm from './SignupFormSeller';
 // yup imported for form validation
 import * as yup from 'yup';
 
@@ -20,7 +20,7 @@ const initialFormValues = {
   email: '',
   password: '',
   // dropdown selection
-  account: '',
+  // account: '',
 }
 
 // the shape of the validation errors object
@@ -28,7 +28,7 @@ const initialFormErrors = {
   username: '',
   email: '',
   password: '',
-  account: '',
+  // account: '',
 }
 
 // Step 7 - build
@@ -45,15 +45,15 @@ const formSchema = yup.object().shape({
     .string()
     .min(7, 'Your Password must have at least 7 characters')
     .required('Password is required'),
-  account: yup
-    .string()
-    .matches( /(Seller|Buyer)/, 'Choose either Seller or Buyer')
-    .required('Selecting an account type is required')
+  // account: yup
+  //   .string()
+  //   .matches( /(Seller|Buyer)/, 'Choose either Seller or Buyer')
+  //   .required('Selecting an account type is required')
 })
 
 // Styling 
 
-function Signup() {
+function SignupSeller() {
   const [users, setUsers] = useState([])
   const [formValues, setFormValues] = useState(initialFormValues)
   // Step 1 - Keep track of whether or not Create Account Button is Disabled
@@ -96,7 +96,7 @@ function Signup() {
           username: formValues.username,
           email: formValues.email,
           password: formValues.password,
-          account: formValues.account === 'buyer' ? false : true,
+          // account: formValues.account === 'buyer' ? false : true,
       }
       // Step 6 - Post new user to the API
       postNewUser(newUser)
@@ -142,4 +142,4 @@ function Signup() {
   )
 } 
 
-export default Signup
+export default SignupSeller
