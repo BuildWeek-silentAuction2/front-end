@@ -15,7 +15,7 @@ const SellerLogin = props => {
         .post("https://api-silent-auction.herokuapp.com/api/seller/login", login)
         .then(res => {
           localStorage.setItem("token", res.data.payload);
-          props.history.push("/bubblepage");
+          props.history.push("/seller-page");
         })
         .catch(err => console.log(err))
     }
