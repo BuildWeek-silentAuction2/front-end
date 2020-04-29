@@ -3,8 +3,8 @@ import React from 'react'
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import InputLabel from '@material-ui/core/InputLabel';
-import Select from '@material-ui/core/Select';
+// import InputLabel from '@material-ui/core/InputLabel';
+// import Select from '@material-ui/core/Select';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
@@ -61,7 +61,7 @@ function SignupForm(props){
                             {errors.username}
                             {errors.email}
                             {errors.password}
-                            {errors.account}
+                            {/* {errors.account} */}
                         </div>
                         <br></br>
                     </div>
@@ -104,7 +104,7 @@ function SignupForm(props){
                             />
                         </Grid>               
                     {/* ////// DROPDOWN ///////// */}
-                        <Grid item xs={12}>
+                        {/* <Grid item xs={12}>
                             <InputLabel className={classes.accountType}>Account Type</InputLabel>
                                 <Select 
                                     value={values.account}
@@ -118,7 +118,7 @@ function SignupForm(props){
                                 <option value='Seller'>Seller</option>
                                 <option value='Buyer'>Buyer</option>
                             </Select>
-                        </Grid>
+                        </Grid> */}
                     </Grid>
                     {/* /////// Create Account BUTTON //////// */}
                     <Button 
