@@ -1,25 +1,18 @@
 import React from 'react';
 import {BrowserRouter as Router, Route} from "react-router-dom";
-import Header from './Header';
-import './App.css';
-import SellerPage from "./components/Seller/SellerPage";
-import AuctionPage from "./components/Seller/AuctionPage";
-import NewListing from "./components/Seller/NewListing";
-import NewAuction from "./components/Seller/NewAuction";
+import Header from "./Header";
+import "./App.css";
+
 
 const App = () => {
   return (
     <div className="App">
       <Header />
       <Router>
-        <Route exact path="/" component={SellerPage}/>
-        <Route exact path="/view-auction/:id" component={AuctionPage}/>
-        <Route exact path="/new-listing" component={NewListing} />
-        <Route exact path="/new-auction" component={NewAuction}/>
       </Router>
     </div>
   );
-}
+};
 
 export default App;
 
@@ -30,13 +23,13 @@ export default App;
 // import NewListing from "./components/Seller/NewListing";
 // import NewAuction from "./components/Seller/NewAuction";
 
-{/* <Route exact path="/" component={SellerPage}/>
+/* <Route exact path="/" component={SellerPage}/>
 <Route exact path="/view-auction/:id" component={AuctionPage}/>
 <Route exact path="/new-listing" component={NewListing} />
-<Route exact path="/new-auction" component={NewAuction}/> */}
+<Route exact path="/new-auction" component={NewAuction}/> */
 
 // import BuyerPage from "./components/Buyer/BuyerPage";
 // import AddBid from "./components/Buyer/AddBid";
 
-{/* <Route exact path="/" component={BuyerPage}/>
-<Route exact path="/view-auction/:id" component={AddBid} /> */}
+/* <Route exact path="/" component={BuyerPage}/>
+<Route exact path="/view-auction/:id" component={AddBid} /> */
