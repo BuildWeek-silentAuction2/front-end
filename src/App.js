@@ -1,17 +1,14 @@
 import React from 'react';
 
+import Header from './Header';
+
 import './App.css';
 
-
-
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-      <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-        Silent Auction
-      </header>
-      
+      <Header />
+
     </div>
   );
 }

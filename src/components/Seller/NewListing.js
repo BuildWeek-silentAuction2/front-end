@@ -1,12 +1,12 @@
 import React, {useEffect} from "react";
 import {connect} from "react-redux";
 
-import newItem from "../../actions/sellerActions/newItem";
+import newListing from "../../actions/sellerActions/newListing";
 
 import SpinningLoader from "../Design Components/SpinningLoader"
-import StyledButton from "../Design Components/StyledButton";
+import Button from '@material-ui/core/Button'
 
-const NewItem = props => {
+const NewListing = props => {
     useEffect(() => {
         props.newItem();
     }, [props])
@@ -51,7 +51,7 @@ const NewItem = props => {
                 onChange={handleChange}
                 />
             </form>
-            <StyledButton type="submit" onSubmit={addingItem}>Add Item</StyledButton>
+            <Button type="submit" onSubmit={addingItem}>Add Item</Button>
         </div>
     )
 }
@@ -65,4 +65,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, {newItem})(NewItem)
+export default connect(mapStateToProps, {newListing})(NewListing)

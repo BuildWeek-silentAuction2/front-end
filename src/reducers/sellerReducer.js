@@ -26,7 +26,27 @@ export const sellerReducer = (state = initialState, action) => {
                 isFetching: false,
                 error: action.payload
             }
-            
+
+        //Getting Specific Auction
+        case "FETCH_AUCTION_ID_START":
+            return {
+                ...state,
+                isFetching: true
+            };
+        case "FETCH_AUCTION_ID_SUCCESS":
+            return {
+                ...state,
+                isFetching: false,
+                data: action.payload,
+                error: ""
+            };
+        case "FETCH_AUCTION_ID_FAILURE":
+            return {
+                ...state,
+                isFetching: false,
+                error: action.payload
+            }
+
         // Making New Auction
         case "PUT_NEW_AUCTION":
             return {
