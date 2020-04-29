@@ -1,12 +1,10 @@
 import React, {useState, useEffect} from "react";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
-
 import {fetchAuctions} from "../../actions/fetchAuctions";
-
 import SpinningLoader from "../Design Components/SpinningLoader"
 import Button from '@material-ui/core/Button';
-  
+
 const SellerCurrentAuctions = props => {
     const [auctionId, setAuctionId] = useState({
         id: ""
@@ -43,7 +41,6 @@ const SellerCurrentAuctions = props => {
         </div>
     )
 };
-
 const mapStateToProps = state => {
     // console.log("Seller Auctions State to Props: ", state);
     return {
@@ -53,5 +50,4 @@ const mapStateToProps = state => {
         error: state.sellerReducer.error
     };
 };
-
 export default connect(mapStateToProps, {fetchAuctions})(SellerCurrentAuctions)
