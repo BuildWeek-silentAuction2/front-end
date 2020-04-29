@@ -1,22 +1,19 @@
-import React, {useEffect} from "react";
+import React, {useState} from "react";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 
-import {fetchAuctions} from "../../actions/fetchAuctions";
+import {getAuction} from "../../actions/sellerActions/getAuction";
 
-import SpinningLoader from "../Design Components/SpinningLoader"
 import Button from '@material-ui/core/Button'
-  
-const SellerCurrentAuctions = props => {
+import SpinningLoader from "../Design Components/SpinningLoader";
 
-    useEffect(() => {
-        props.fetchAuctions();
-        //console.log("Fetch Auctions: ", props.fetchAuctions())
-    }, [])
+const AuctionPage = props => {
+    // const [auctionId, setAuctionId] = useState(props)
+    console.log("Auction Id: ", props.data)
 
-    return (
+    return(
         <div className="auction-list">
-            <h2>Current Running Auctions:</h2>
+            <h2>Selected Auction Information</h2>
             {props.isFetching && (
             <div className="spinner-box">
                 <SpinningLoader />
@@ -27,15 +24,19 @@ const SellerCurrentAuctions = props => {
                 <div className="auction-card" key={item.id}>
                     <h3>Auction {item.id}</h3>
                     <h4>End Time: {item.end_time}</h4>
-                    <Link to="/view-auction/:id">
-                        <Button variant="contained" color="secondary">Details</Button>
+                    <Link to="/new-listing">
+                        <Button variant="contained" color="secondary">Add Listing</Button>
                     </Link>
+                    <br/>
+                    <br/>
                 </div>
             ))}
+            <Link to="/">
+                <Button variant="contained" color="secondary">Home</Button>
+            </Link>
         </div>
     )
-};
-
+}
 const mapStateToProps = state => {
     // console.log("Seller Auctions State to Props: ", state);
     return {
@@ -45,4 +46,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, {fetchAuctions})(SellerCurrentAuctions)
+export default connect(mapStateToProps, {getAuction})(AuctionPage)

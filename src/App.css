@@ -18,3 +18,8 @@
   justify-content: center;
   margin-right: 1%;
 }
+
+input {
+  margin: 2%;
+  border: 1px solid black;
+}

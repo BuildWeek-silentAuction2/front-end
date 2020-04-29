@@ -1,17 +1,35 @@
 import React from 'react';
+import {BrowserRouter as Router, Route} from "react-router-dom";
+
+import Header from './Header';
 import './App.css';
 
-
-
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-      <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-        Silent Auction
-      </header>
+      <Header />
+      <Router>
+      </Router>
     </div>
   );
 }
 
 export default App;
+
+// Imports and components for SellerPage and BuyerPage
+
+// import SellerPage from "./components/Seller/SellerPage";
+// import AuctionPage from "./components/Seller/AuctionPage";
+// import NewListing from "./components/Seller/NewListing";
+// import NewAuction from "./components/Seller/NewAuction";
+
+{/* <Route exact path="/" component={SellerPage}/>
+<Route exact path="/view-auction/:id" component={AuctionPage}/>
+<Route exact path="/new-listing" component={NewListing} />
+<Route exact path="/new-auction" component={NewAuction}/> */}
+
+// import BuyerPage from "./components/Buyer/BuyerPage";
+// import AddBid from "./components/Buyer/AddBid";
+
+{/* <Route exact path="/" component={BuyerPage}/>
+<Route exact path="/view-auction/:id" component={AddBid} /> */}
