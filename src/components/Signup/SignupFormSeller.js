@@ -12,8 +12,6 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Avatar } from '@material-ui/core';
-
-
 const useStyles = makeStyles((theme) => ({
     paper: {
       marginTop: theme.spacing(8),
@@ -32,8 +30,11 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: theme.spacing(2)
     }
   }));
+<<<<<<< HEAD
   
 
+=======
+>>>>>>> b52c9f47820aec9301d7a2774fe08c787f5bdc43
 function SignupFormSeller(props){
     const {
         values,
@@ -42,9 +43,7 @@ function SignupFormSeller(props){
         disabled,
         errors,
     } = props;
-
     const classes = useStyles();
-
     return (
         <Container component='main' maxWidth='xs'>
             <CssBaseline />
@@ -138,5 +137,8 @@ function SignupFormSeller(props){
         </Container>
     )
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> b52c9f47820aec9301d7a2774fe08c787f5bdc43
 export default SignupFormSeller

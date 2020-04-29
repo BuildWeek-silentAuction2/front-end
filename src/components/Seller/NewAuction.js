@@ -4,7 +4,7 @@ import {useHistory, Link} from "react-router-dom";
 
 import {addNewAuction} from "../../actions/sellerActions/addNewAuction"
 
-import StyledButton from "../Design Components/StyledButton";
+import Button from '@material-ui/core/Button';
 
 const NewAuction = props => {
     const [newAuction, setNewAuction] = useState();
@@ -38,11 +38,11 @@ const NewAuction = props => {
                 onChange={handleChange}
                 />
             </form>
-            <StyledButton type="submit" onClick={submitForm} variant="contained" color="secondary">Add Auction</StyledButton>
+            <Button type="submit" onClick={submitForm}>Add Auction</Button>
             <br/>
             <br/>
             <Link to="/">
-                <StyledButton variant="contained" color="secondary">Home</StyledButton>
+                <Button variant="contained" color="secondary">Home</Button>
             </Link>
         </div>
 
