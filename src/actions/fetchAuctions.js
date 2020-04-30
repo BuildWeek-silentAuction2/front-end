@@ -6,7 +6,7 @@ export const fetchAuctions = () => {
     axiosWithAuth()
         .get("/api/auction")
         .then(res => {
-            console.log("Fetch Auctions: ", res);
+            // console.log("Fetch Auctions: ", res);
             dispatch({type: "FETCH_AUCTIONS_SUCCESS", payload: res.data})
         })
         .catch(err => {

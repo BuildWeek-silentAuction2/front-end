@@ -16,7 +16,7 @@ const SellerCurrentAuctions = props => {
     }, [])
 
     const submitId = e => {
-        setAuctionId(...auctionId, props.data.id)
+        setAuctionId(...auctionId, props.auctionData.id)
         // console.log("Auction Id: ", auctionId)
     };
 
@@ -28,8 +28,7 @@ const SellerCurrentAuctions = props => {
                 <SpinningLoader />
             </div>
             )}
-            {props.error && <p className="error">{props.error}</p>}
-            {props.data && props.data.map(item => (
+            {props.auctionData && props.auctionData.map(item => (
                 <div className="auction-card" key={item.id}>
                     <h3>{item.name}</h3>
                     <h4>End Time: {item.end_time}</h4>
@@ -44,7 +43,7 @@ const SellerCurrentAuctions = props => {
 const mapStateToProps = state => {
     // console.log("Seller Auctions State to Props: ", state);
     return {
-        data: state.sellerReducer.data.data,
+        auctionData: state.buyerReducer.data.data,
         isFetching: state.sellerReducer.isFetching,
         error: state.sellerReducer.error
     };

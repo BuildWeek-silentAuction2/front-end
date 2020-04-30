@@ -87,6 +87,66 @@ export const sellerReducer = (state = initialState, action) => {
                 isFetching: false,
                 error: action.payload
             }
+
+        // Updating Account Info
+        case "PUT_NEW_DATA":
+            return {                
+                ...state,
+                isFetching: true    
+            }
+        case "PUT_DATA_SUCCESS":
+            return {
+                ...state,
+                isFetching: false,
+                data: action.payload,
+                error: ""
+            };
+        case "PUT_DATA_FAILURE":
+            return {
+                ...state,
+                isFetching: false,
+                error: action.payload
+            }
+
+        // Get Sellers Info
+        case "FETCH_SELLER_START":
+            return {                
+                ...state,
+                isFetching: true    
+            }
+        case "FETCH_SELLER_SUCCESS":
+            return {
+                ...state,
+                isFetching: false,
+                data: action.payload,
+                error: ""
+            };
+        case "FETCH_SELLER_FAILURE":
+            return {
+                ...state,
+                isFetching: false,
+                error: action.payload
+            }
+
+        // Delete Sellers
+        case "DELETE_SELLER_START":
+            return {                
+                ...state,
+                isFetching: true    
+            }
+        case "DELETE_SELLER_SUCCESS":
+            return {
+                ...state,
+                isFetching: false,
+                data: action.payload,
+                error: ""
+            };
+        case "DELETE_SELLER_FAILURE":
+            return {
+                ...state,
+                isFetching: false,
+                error: action.payload
+            }
         default:
             return state;
     }
