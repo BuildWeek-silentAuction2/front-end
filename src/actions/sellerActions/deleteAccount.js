@@ -4,7 +4,7 @@ export const deleteAccount = () => {
     return dispatch => {
     dispatch({type: "DELETE_SELLER_START"})
     axiosWithAuth()
-    .delete(`https://api-silent-auction.herokuapp.com/api/seller/${id}`)
+    .delete(`https://api-silent-auction.herokuapp.com/api/seller/:id`)
     .then(res => {
         console.log("Fetch Seller Succeeded: ", res.data.data);
         dispatch({type: "DELETE_SELLER_SUCCESS", payload: res.data.data})

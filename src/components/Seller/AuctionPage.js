@@ -6,7 +6,6 @@ import {getAuction} from "../../actions/sellerActions/getAuction";
 
 import Button from '@material-ui/core/Button';
 import SpinningLoader from "../Design Components/SpinningLoader";
-import ViewAllBids from "./ViewAllBids";
 
 const AuctionPage = props => {
     const {id} = useParams()
@@ -15,7 +14,7 @@ const AuctionPage = props => {
         props.getAuction(id);
         console.log("Get Auction: ", props.getAuction(id))
     }, [])
-
+    
 
     return(
         <div className="auction-list">
@@ -32,7 +31,7 @@ const AuctionPage = props => {
                     <h3>{item.name}</h3>
                     <h4>End Time: {item.end_time}</h4>
                     <Link to="/all-listings">
-                        <Button onClick={ViewAllBids} variant="contained" color="secondary">View Bids</Button>
+                        <Button variant="contained" color="secondary">View Bids</Button>
                     </Link>
                     <br/>
                     <br/>
