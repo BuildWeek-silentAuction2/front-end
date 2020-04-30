@@ -37,7 +37,14 @@ const AuctionPage = (props) => {
             </Link>
             <br />
             <br />
-            <Link to="/delete-auction">
+            <Link to={`/view-auction/${id}/update`}>
+              <Button variant="contained" color="secondary">
+                Update Auction
+              </Button>
+            </Link>
+            <br/>
+            <br/>
+            <Link to={`/view-auction/${id}/delete`}>
               <Button variant="contained" color="secondary">
                 Delete Auction
               </Button>
