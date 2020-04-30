@@ -31,7 +31,7 @@ const BuyerCurrentAuctions = props => {
             {props.error && <p className="error">{props.error}</p>}
             {props.data && props.data.map(item => (
                 <div className="auction-card" key={item.id}>
-                    <h3>Auction {item.id}</h3>
+                    <h3>{item.name}</h3>
                     <h4>End Time: {item.end_time}</h4>
                     <Link to={`/auction-bidding/${item.id}`}>
                         <Button onClick={submitId} variant="contained" color="secondary">Details</Button>
