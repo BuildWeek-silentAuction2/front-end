@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {connect} from "react-redux";
 import {useHistory, Link} from "react-router-dom";
 import jwt_decode from "jwt-decode";
 
 import {addNewAuction} from "../../actions/sellerActions/addNewAuction"
 
-import SpinningLoader from "../Design Components/SpinningLoader"
 import Button from '@material-ui/core/Button';
 
 const NewAuction = props => {
@@ -39,7 +38,7 @@ const NewAuction = props => {
         }
         // console.log("Form Submit: ", props.addNewAuction(auctionSubmit))
         props.addNewAuction(auctionSubmit)
-        window.setTimeout(() => push("/seller-page"), 3000);
+        window.setTimeout(() => push("/seller-page"), 2000);
       };
 
     return (
@@ -90,8 +89,3 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps, {addNewAuction})(NewAuction)
-
-    //   const formatter = () => {
-    //     let formattedTime = `${props.auction.endDate} ${props.auction.endTime}`;
-    //     return formattedTime;
-    //   }
