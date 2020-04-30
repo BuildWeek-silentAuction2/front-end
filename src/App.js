@@ -12,6 +12,7 @@ import AddBid from "./components/Buyer/AddBid";
 import BuyerLogin from "./components/Login/BuyerLogin";
 import SellerLogin from "./components/Login/SellerLogin";
 import SellerAccount from "./components/Seller/SellerAccount";
+import ViewAllBids from "./components/Seller/ViewAllBids";
 
 import "./App.css";
 
@@ -41,6 +42,7 @@ const App = () => {
         <Route exact path="/login-seller" component={SellerLogin} />
         <PrivateRoute exact path="/seller-page" component={SellerPage}/>
         <PrivateRoute exat path="/update-seller-account" component={SellerAccount}/>
+        <PrivateRoute exact path="/view-auction/:id/all-listings" component={ViewAllBids}/>
         <PrivateRoute exact path="/view-auction/:id" component={AuctionPage}/>
         <PrivateRoute exact path="/view-auction/:id/new-listing" component={NewListing} />
         <PrivateRoute exact path="/new-auction" component={NewAuction}/>
