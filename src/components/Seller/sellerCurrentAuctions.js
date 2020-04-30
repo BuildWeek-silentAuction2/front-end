@@ -41,7 +41,7 @@ const SellerCurrentAuctions = props => {
     )
 };
 const mapStateToProps = state => {
-    // console.log("Seller Auctions State to Props: ", state);
+    console.log("Seller Auctions State to Props: ", state);
     return {
         auctionData: state.buyerReducer.data.data,
         isFetching: state.sellerReducer.isFetching,

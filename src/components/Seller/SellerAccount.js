@@ -25,10 +25,10 @@ const SellerAccount = props => {
         setNewAccountData({...newAccountData, [e.target.username]: e.target.username, [e.target.password]: e.target.password})
       };
 
-    const deleteAccount = e => {
-        e.preventDefault()
-        deleteAccount(id)
-    }
+    // const deleteAccount = e => {
+    //     e.preventDefault()
+    //     deleteAccount(id)
+    // }
 
     return (
         <div>
