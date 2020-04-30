@@ -14,7 +14,7 @@ const BuyerLogin = props => {
       axios
         .post("https://api-silent-auction.herokuapp.com/api/buyer/login", login)
         .then(res => {
-          localStorage.setItem("token", res.data.payload);
+          localStorage.setItem("token", res.data.token);
           props.history.push("/buyer-page");
         })
         .catch(err => console.log(err))
