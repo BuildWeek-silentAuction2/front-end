@@ -147,6 +147,26 @@ export const sellerReducer = (state = initialState, action) => {
                 isFetching: false,
                 error: action.payload
             }
+
+        // Updating Auction Info
+        case "UPDATE_AUCTION_DATA":
+            return {                
+                ...state,
+                isFetching: true    
+            }
+        case "UPDATE_AUCTION_SUCCESS":
+            return {
+                ...state,
+                isFetching: false,
+                data: action.payload,
+                error: ""
+            };
+        case "UPDATE_AUCTION_FAILURE":
+            return {
+                ...state,
+                isFetching: false,
+                error: action.payload
+            }
         default:
             return state;
     }
