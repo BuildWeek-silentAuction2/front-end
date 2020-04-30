@@ -50,9 +50,3 @@ const App = () => {
 };
 
 export default App;
-
-// Imports and components for SellerPage and BuyerPage
-
-
-
-

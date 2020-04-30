@@ -1,6 +1,6 @@
 import axiosWithAuth from "../../utils/axiosWithAuth";
 
-export const getAuction = (id) => {
+export const getAuctionBuyer = (id) => {
     return dispatch => {
     dispatch({type: "FETCH_AUCTION_ID_START"})
     axiosWithAuth()
