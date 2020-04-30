@@ -62,7 +62,7 @@ const NewListing = props => {
                 onChange={handleChange}
                 />
             </form>
-            <Button variant="contained" color="secondary" type="submit" onSubmit={submitForm}>Add Item</Button>
+            <Button type="submit" onSubmit={submitForm} variant="contained" color="secondary">Add Item</Button>
             <br/>
             <br/>
             <Link to="/seller-page">

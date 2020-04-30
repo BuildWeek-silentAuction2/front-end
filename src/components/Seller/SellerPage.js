@@ -19,7 +19,12 @@ const SellerPage = () => {
             <Link to="/new-auction">
                 <Button variant="contained" color="secondary">Create New Auction</Button>
             </Link>
+            <br/>
+            <br/>
         </div>
+            <Link to="/update-seller-account">
+                <Button variant="contained" color="secondary">Update Account</Button>
+            </Link>
         </div>
     )
 }

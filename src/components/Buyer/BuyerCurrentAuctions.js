@@ -33,7 +33,7 @@ const BuyerCurrentAuctions = props => {
                 <div className="auction-card" key={item.id}>
                     <h3>Auction {item.id}</h3>
                     <h4>End Time: {item.end_time}</h4>
-                    <Link to={`/view-auction/${item.id}`}>
+                    <Link to={`/auction-bidding/${item.id}`}>
                         <Button onClick={submitId} variant="contained" color="secondary">Details</Button>
                     </Link>
                 </div>
@@ -42,7 +42,7 @@ const BuyerCurrentAuctions = props => {
     )
 };
 const mapStateToProps = state => {
-    console.log("Bidder Auctions State to Props: ", state);
+    // console.log("Bidder Auctions State to Props: ", state);
     return {
         data: state.buyerReducer.data.data,
         isFetching: state.buyerReducer.isFetching,

@@ -13,7 +13,7 @@ const AuctionPage = props => {
 
     useEffect(() => {
         props.getAuction(id);
-        // console.log("Get Auction: ", props.getAuction(id))
+        console.log("Get Auction: ", props.getAuction(id))
     }, [])
 
 
@@ -26,7 +26,7 @@ const AuctionPage = props => {
             </div>
             )}
             {props.error && <p className="error">{props.error}</p>}
-            {/* {console.log("Data passing into the map function: ", props.data)} */}
+            {console.log("Data passing into the map function: ", props.data)}
             {props.data && props.data.map(item => (
                 <div className="auction-card" key={item.id}>
                     <h3>{item.name}</h3>
