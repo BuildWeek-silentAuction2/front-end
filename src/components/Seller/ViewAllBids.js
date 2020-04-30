@@ -1,23 +1,33 @@
 import React, { useState, useEffect } from "react";
 import axiosWithAuth from "../../utils/axiosWithAuth";
+// import axios from 'axios';
 import Bid from "./Bid";
 
-function ViewAllBids() {
-  const [bids, setBids] = useState();
+const ViewAllBids = () => {
+  const [bids, setBids] = useState([]);
 
-  const url = "https://api-silent-auction.herokuapp.com/api/bid/";
-
-  // Fetch bid info from API
   useEffect(() => {
     axiosWithAuth()
-      .get(url)
+      .get("api/bid/")
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
+        setBids(res.data.data);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
+
+  // Fetch bid info from API
+  // useEffect(() => {
+  //     axios.get('https://api-silent-auction.herokuapp.com/api/bid/')
+  //     .then(res => {
+  //         console.log(res)
+  //     })
+  //     .catch(err => {
+  //         console.log(err)
+  //     })
+  // }, [])
 
   return (
     <div className="view-bids-container">
@@ -27,6 +37,6 @@ function ViewAllBids() {
       })}
     </div>
   );
-}
+};
 
 export default ViewAllBids;
