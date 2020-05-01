@@ -1,10 +1,10 @@
 import axiosWithAuth from "../../utils/axiosWithAuth";
 
-export const newBid = () => {
+export const newBid = (newBidSubmit) => {
     return dispatch => {
     dispatch({type: "PUT_NEW_BID"})
     axiosWithAuth()
-        .post("/api/bid",)
+        .post("/api/bid", newBidSubmit)
         .then(res => {
             console.log("Post Bid Succeeded: ", res);
             dispatch({type: "PUT_BID_SUCCESS", payload: res.data})

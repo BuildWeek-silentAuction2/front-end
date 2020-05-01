@@ -8,15 +8,15 @@ import SpinningLoader from "../Design Components/SpinningLoader"
 import Button from '@material-ui/core/Button';
 
 const BuyerCurrentAuctions = props => {
-    const [auctionId, setAuctionId] = useState([])
+    const [auctionIdBuyer, setAuctionIdBuyer] = useState([])
 
     useEffect(() => {
         props.fetchAuctions();
         //console.log("Fetch Auctions: ", props.fetchAuctions())
     }, [])
 
-    const submitId = e => {
-        setAuctionId(...auctionId, props.data.id)
+    const submitIdBuyer = e => {
+        setAuctionIdBuyer(...auctionIdBuyer, props.auctionData.id)
         // console.log("Auction Id: ", auctionId)
     };
 
@@ -28,13 +28,12 @@ const BuyerCurrentAuctions = props => {
                 <SpinningLoader />
             </div>
             )}
-            {props.error && <p className="error">{props.error}</p>}
-            {props.data && props.data.map(item => (
+            {props.auctionData && props.auctionData.map(item => (
                 <div className="auction-card" key={item.id}>
                     <h3>{item.name}</h3>
                     <h4>End Time: {item.end_time}</h4>
-                    <Link to={`/auction-bidding/${item.id}`}>
-                        <Button onClick={submitId} variant="contained" color="secondary">Details</Button>
+                    <Link to={`/view-auction-bid/${item.id}`}>
+                        <Button onClick={submitIdBuyer} variant="contained" color="primary">Details</Button>
                     </Link>
                 </div>
             ))}
@@ -44,7 +43,7 @@ const BuyerCurrentAuctions = props => {
 const mapStateToProps = state => {
     // console.log("Bidder Auctions State to Props: ", state);
     return {
-        data: state.buyerReducer.data.data,
+        auctionData: state.buyerReducer.data.data,
         isFetching: state.buyerReducer.isFetching,
         error: state.buyerReducer.error
     };

@@ -4,7 +4,7 @@ import axiosWithAuth from "../../utils/axiosWithAuth";
 
 import Button from '@material-ui/core/Button';
 // import axios from 'axios';
-import Bid from "./Bid";
+import BuyerBid from "./BuyerBid";
 
 const ViewAllBids = () => {
   const [bids, setBids] = useState([]);
@@ -21,25 +21,14 @@ const ViewAllBids = () => {
       });
   }, []);
 
-  // Fetch bid info from API
-  // useEffect(() => {
-  //     axios.get('https://api-silent-auction.herokuapp.com/api/bid/')
-  //     .then(res => {
-  //         console.log(res)
-  //     })
-  //     .catch(err => {
-  //         console.log(err)
-  //     })
-  // }, [])
-
   return (
     <div className="view-bids-container">
       <h2>All Bids</h2>
       {bids.map((bid) => {
-        return <Bid key={bid.id} details={bid} />;
+        return <BuyerBid key={bid.id} details={bid} />;
       })}
-      <Link to="/seller-page">
-      <Button variant="contained" color="secondary">Home</Button>
+      <Link to="/buyer-page">
+      <Button variant="contained" color="primary">Home</Button>
       </Link>
       <br/>
       <br/>
