@@ -17,8 +17,7 @@ const UpdateAuction = (props) => {
     });
     console.log("PROPS", props)
 
-    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoiMmQwZjdjNGMtZmQyYS00NWJmLThmY2EtMDM1ODkwODY2OTk2IiwidXNlcm5hbWUiOiJ0ZXN0c2VsbGVyIiwiaWF0IjoxNTg4MjYzNjkwLCJleHAiOjE1ODgyNjcyOTB9.WyjM5WjgX1ZOC-ItS9toqjV-e3QWfkiu_bmoY2ravjo"
-
+    const token = localStorage.getItem("token");
     const decoded = jwt_decode(token)
     // console.log("Decoded Token", decoded)
 

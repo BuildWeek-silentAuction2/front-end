@@ -124,7 +124,7 @@ function SignupFormBuyer(props){
                             className={classes.submit}
                             fullWidth
                             variant='contained'
-                            color='secondary'
+                            color='primary'
                             >  Create Account
                         </Button>
                     </Link>
@@ -141,7 +141,7 @@ function SignupFormBuyer(props){
                         className={classes.submit}
                         fullWidth
                         variant='contained'
-                        color='primary'
+                        color='secondary'
                         >  Are You Selling?
                     </Button>
                 </Link>

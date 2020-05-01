@@ -9,15 +9,13 @@ import Button from '@material-ui/core/Button';
 
 const NewAuction = props => {
     const { push } = useHistory()
-    const [newAuction, setNewAuction] = useState({
+    const [newAuctionForm, setNewAuctionForm] = useState({
         name: "",
         end_date: "",
         end_time: "",
     });
     console.log("New Auction state: ", props.newAuction)
-
-        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoiMmQwZjdjNGMtZmQyYS00NWJmLThmY2EtMDM1ODkwODY2OTk2IiwidXNlcm5hbWUiOiJ0ZXN0c2VsbGVyIiwiaWF0IjoxNTg4MjYzNjkwLCJleHAiOjE1ODgyNjcyOTB9.WyjM5WjgX1ZOC-ItS9toqjV-e3QWfkiu_bmoY2ravjo"
-
+    const token = localStorage.getItem("token");
         const decoded = jwt_decode(token)
         // console.log("Decoded Token", decoded)
 
@@ -25,15 +23,15 @@ const NewAuction = props => {
         // console.log(sellerId);
 
       const handleChange = e => {
-        setNewAuction({...newAuction, [e.target.name]: e.target.value})
+        setNewAuctionForm({...newAuctionForm, [e.target.name]: e.target.value})
         // console.log("Create New Auction", newAuction);
       };
 
       const submitForm = e => {
           e.preventDefault()
         const auctionSubmit = {
-            name: newAuction.name,
-            end_time: `${newAuction.end_date} ${newAuction.end_time}:00`,
+            name: newAuctionForm.name,
+            end_time: `${newAuctionForm.end_date} ${newAuctionForm.end_time}:00`,
             seller_id: sellerId
         }
         // console.log("Form Submit: ", props.addNewAuction(auctionSubmit))
@@ -50,20 +48,20 @@ const NewAuction = props => {
                 type="text"
                 name="name"
                 placeholder="Auction Name"
-                value={props.auction.name}
+                value={newAuctionForm.name}
                 onChange={handleChange}
                 />
                 <h4>Set desired end time</h4>
                 <input 
                 type="date"
                 name="end_date"
-                value={props.auction.end_date}
+                value={newAuctionForm.end_date}
                 onChange={handleChange}
                 />
                 <input 
                 type="time"
                 name="end_time"
-                value={props.auction.end_time}
+                value={newAuctionForm.end_time}
                 onChange={handleChange}
                 />
                 <Button type="submit" variant="contained" color="secondary">Add Auction</Button>

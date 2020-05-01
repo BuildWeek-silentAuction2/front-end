@@ -1,11 +1,18 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {useHistory, Link} from "react-router-dom";
 
 import SellerCurrentAuctions from "./SellerCurrentAuctions";
 
 import Button from '@material-ui/core/Button';
 
 const SellerPage = () => {
+    const { push } = useHistory()
+
+    const logOut = () => {
+        localStorage.removeItem("token")
+        push(`/`)
+    }
+
     return (
         <div>
         <div>
@@ -25,6 +32,11 @@ const SellerPage = () => {
             <Link to="/update-seller-account">
                 <Button variant="contained" color="secondary">Update Account</Button>
             </Link>
+            <br/>
+            <br/>
+        <div>
+            <Button onClick={logOut} variant="contained" color="secondary">Log Out</Button>
+        </div>
         </div>
     )
 }
