@@ -31,7 +31,7 @@ const AuctionBids = (props) => {
             <h4>End Time: {item.end_time}</h4>
             <Link to={`/view-auction-bid/${id}/all-listings`}>
             <Button variant="contained" color="primary">
-              View Listings
+              View Bids
             </Button>
             </Link>
             <br/>
