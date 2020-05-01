@@ -20,7 +20,7 @@ const BuyerPage = () => {
                 <BuyerCurrentAuctions />
                 <br/>
             <div>
-                <Link to="/update-seller-account">
+                <Link to="/update-buyer-account">
                     <Button variant="contained" color="primary">Update Account</Button>
                 </Link>
                 <br/>
