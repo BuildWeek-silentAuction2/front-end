@@ -17,7 +17,7 @@ import UpdateAuction from "./components/Seller/UpdateAuction";
 import DeleteAuction from "./components/Seller/DeleteAuction";
 import AuctionBids from "./components/Buyer/AuctionBids";
 import ViewAllBidsBuyer from "./components/Buyer/ViewAllBidsBuyer";
-
+import BuyerAccount from "./components/Buyer/BuyerAccount"
 
 import "./App.css";
 
@@ -69,6 +69,8 @@ const App = () => {
         <PrivateRoute exact path="/view-auction/:id/delete" component={DeleteAuction} />
         <PrivateRoute exact path="/view-auction-bid/:id/" component={AuctionBids} />
         <PrivateRoute exact path="/view-auction-bid/:id/all-listings" component={ViewAllBidsBuyer}/>
+        <PrivateRoute exact path="/update-buyer-account" component={BuyerAccount} />
+        <PrivateRoute exact path="/seller-page" component={SellerPage} />
       </Router>
     </div>
   );
